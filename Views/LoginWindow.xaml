@@ -29,7 +29,7 @@
                     <TextBlock Text="Brewery App"
                                FontSize="34"
                                FontWeight="Bold"
-                               Foreground="White"
+                               Foreground="#D9901A"
                                Margin="0,0,0,10"/>
 
                     <TextBlock Text="Единая цифровая система управления пивоварней: сотрудники, варки, склад, заказы, лаборатория и агрономия в одном красивом интерфейсе."

@@ -11,6 +11,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!-- Боковая панель -->
         <Border Grid.Column="0"
                 Background="{StaticResource SidebarGradientBrush}"
                 CornerRadius="0,26,26,0">
@@ -21,6 +22,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
+                <!-- Логотип и имя приложения -->
                 <StackPanel>
                     <Border Width="70"
                             Height="70"
@@ -32,12 +34,10 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"/>
                     </Border>
-
                     <TextBlock Text="Brewery App"
                                Foreground="{StaticResource AmberLightBrush}"
                                FontSize="24"
                                FontWeight="Bold"/>
-
                     <TextBlock Name="UserInfoText"
                                Foreground="{StaticResource TextSecondaryBrush}"
                                FontSize="15"
@@ -46,82 +46,31 @@
                                Margin="0,12,0,22"/>
                 </StackPanel>
 
+                <!-- Кнопки навигации -->
                 <ScrollViewer Grid.Row="1"
                               VerticalScrollBarVisibility="Auto"
                               Background="Transparent">
                     <StackPanel>
-                        <Button Name="AdminButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Администрирование"
-                                Click="AdminButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Управление учетными записями и ролями."/>
-
-                        <Button Name="DirectorButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Панель директора"
-                                Click="DirectorButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Сводные данные и управленческие отчеты."/>
-
-                        <Button Name="AgronomistButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Агрономия"
-                                Click="AgronomistButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Посевы, участки, процессы выращивания и урожай."/>
-
-                        <Button Name="OrdersButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Заказы"
-                                Click="OrdersButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Список заказов и операции с ними."/>
-
-                        <Button Name="StockButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Склад"
-                                Click="StockButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Остатки готовой продукции на складе."/>
-
-                        <Button Name="MyTasksButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Мои задачи"
-                                Click="MyTasksButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Личные задачи текущего пользователя."/>
-
-                        <Button Name="ManagerTasksButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Постановка задач"
-                                Click="ManagerTasksButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Создание задач подчиненным и контроль исполнения."/>
-
-                        <Button Name="ReportsButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Отчеты"
-                                Click="ReportsButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Быстрые аналитические отчеты по данным системы."/>
-
-                        <Button Name="BrewerButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Панель пивовара"
-                                Click="BrewerButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Работа с назначенными варками."/>
-
-                        <Button Name="LabButton"
-                                Style="{StaticResource NavButtonStyle}"
-                                Content="Панель лаборанта"
-                                Click="LabButton_Click"
-                                Visibility="Collapsed"
-                                ToolTip="Контроль качества и статусы проверок."/>
+                        <Button Name="AdminButton" Style="{StaticResource NavButtonStyle}" Content="Администрирование" Click="AdminButton_Click" Visibility="Collapsed" ToolTip="Управление учетными записями и ролями."/>
+                        <Button Name="DirectorButton" Style="{StaticResource NavButtonStyle}" Content="Панель директора" Click="DirectorButton_Click" Visibility="Collapsed" ToolTip="Сводные данные и управленческие отчеты."/>
+                        <Button Name="AgronomistButton" Style="{StaticResource NavButtonStyle}" Content="Агрономия" Click="AgronomistButton_Click" Visibility="Collapsed" ToolTip="Посевы, участки, процессы выращивания и урожай."/>
+                        <Button Name="OrdersButton" Style="{StaticResource NavButtonStyle}" Content="Заказы" Click="OrdersButton_Click" Visibility="Collapsed" ToolTip="Список заказов и операции с ними."/>
+                        <Button Name="StockButton" Style="{StaticResource NavButtonStyle}" Content="Склад" Click="StockButton_Click" Visibility="Collapsed" ToolTip="Остатки готовой продукции на складе."/>
+                        <Button Name="MyTasksButton" Style="{StaticResource NavButtonStyle}" Content="Мои задачи" Click="MyTasksButton_Click" Visibility="Collapsed" ToolTip="Личные задачи текущего пользователя."/>
+                        <Button Name="ManagerTasksButton" Style="{StaticResource NavButtonStyle}" Content="Постановка задач" Click="ManagerTasksButton_Click" Visibility="Collapsed" ToolTip="Создание задач подчиненным и контроль исполнения."/>
+                        <Button Name="ReportsButton" Style="{StaticResource NavButtonStyle}" Content="Отчеты" Click="ReportsButton_Click" Visibility="Collapsed" ToolTip="Быстрые аналитические отчеты по данным системы."/>
+                        <Button Name="BrewerButton" Style="{StaticResource NavButtonStyle}" Content="Панель пивовара" Click="BrewerButton_Click" Visibility="Collapsed" ToolTip="Работа с назначенными варками."/>
+                        <Button Name="LabButton" Style="{StaticResource NavButtonStyle}" Content="Панель лаборанта" Click="LabButton_Click" Visibility="Collapsed" ToolTip="Контроль качества и статусы проверок."/>
+                        <Button Name="LogistButton" Style="{StaticResource NavButtonStyle}" Content="Панель логиста" Click="LogistButton_Click" Visibility="Collapsed" ToolTip="Создание маршрутов и путевых листов."/>
+                        <Button Name="DriverButton" Style="{StaticResource NavButtonStyle}" Content="Панель водителя" Click="DriverButton_Click" Visibility="Collapsed" ToolTip="Просмотр назначенных маршрутов и путевых листов."/>
+                        <Button Name="MechanicButton" Style="{StaticResource NavButtonStyle}" Content="Панель механизатора" Click="MechanicButton_Click" Visibility="Collapsed" ToolTip="Просмотр и управление сельхозтехникой."/>
+                        <Button Name="OperatorBrewingButton" Style="{StaticResource NavButtonStyle}" Content="Оператор варки" Click="OperatorBrewingButton_Click" Visibility="Collapsed" ToolTip="Фиксация операций линии варки."/>
+                        <Button Name="OperatorFiltrationButton" Style="{StaticResource NavButtonStyle}" Content="Оператор фильтрации" Click="OperatorFiltrationButton_Click" Visibility="Collapsed" ToolTip="Фиксация операций линии фильтрации."/>
+                        <Button Name="MasterSectionButton" Style="{StaticResource NavButtonStyle}" Content="Мастер участка" Click="MasterSectionButton_Click" Visibility="Collapsed" ToolTip="Контроль работ на участке."/>
                     </StackPanel>
                 </ScrollViewer>
 
+                <!-- Выход -->
                 <Button Grid.Row="2"
                         Content="Выход"
                         Style="{StaticResource SidebarLogoutButtonStyle}"
@@ -131,6 +80,7 @@
             </Grid>
         </Border>
 
+        <!-- Основная панель для отображения страниц -->
         <Grid Grid.Column="1" Margin="24">
             <Border Style="{StaticResource CardStyle}"
                     Padding="12">

@@ -1,0 +1,21 @@
+﻿<Page x:Class="BreweryApp.Views.MechanicPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="Transparent">
+    <Grid Margin="18">
+        <StackPanel>
+            <TextBlock Text="Панель Механизатора"
+                       Style="{StaticResource PageTitleTextStyle}"/>
+            <TextBlock Text="Просмотр и управление сельхозтехникой."
+                       Style="{StaticResource PageSubtitleTextStyle}"/>
+            <DataGrid Name="EquipmentDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="*"/>
+                    <DataGridTextColumn Header="Инвентарный номер" Binding="{Binding InventoryNumber}" Width="*"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

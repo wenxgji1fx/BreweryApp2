@@ -1,0 +1,22 @@
+﻿<Page x:Class="BreweryApp.Views.LogistPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="Transparent">
+    <Grid Margin="18">
+        <StackPanel>
+            <TextBlock Text="Панель Логиста"
+                       Style="{StaticResource PageTitleTextStyle}"/>
+            <TextBlock Text="Создание маршрутов и путевых листов для водителей."
+                       Style="{StaticResource PageSubtitleTextStyle}"/>
+            <Button Content="Создать маршрут" Height="40" Width="200" Margin="0,0,0,12"/>
+            <DataGrid Name="RoutesDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Маршрут" Binding="{Binding RouteName}" Width="*"/>
+                    <DataGridTextColumn Header="Водитель" Binding="{Binding DriverName}" Width="*"/>
+                    <DataGridTextColumn Header="Продукция" Binding="{Binding Product}" Width="*"/>
+                    <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

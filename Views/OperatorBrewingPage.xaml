@@ -1,0 +1,19 @@
+﻿<Page x:Class="BreweryApp.Views.OperatorBrewingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="Transparent">
+    <Grid Margin="18">
+        <StackPanel>
+            <TextBlock Text="Оператор линии варки"
+                       Style="{StaticResource PageTitleTextStyle}"/>
+            <Button Content="Фиксировать операцию" Height="36" Width="180" Margin="0,4,0,12"/>
+            <DataGrid Name="BrewingOperationsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Код операции" Binding="{Binding OperationId}" Width="*"/>
+                    <DataGridTextColumn Header="Партия" Binding="{Binding Batch}" Width="*"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>
