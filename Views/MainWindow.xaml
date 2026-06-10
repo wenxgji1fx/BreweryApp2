@@ -1,0 +1,143 @@
+﻿<Window x:Class="BreweryApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Информационная система пивоварни"
+        Height="760"
+        Width="1320"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="{StaticResource AppBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="290"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0"
+                Background="{StaticResource SidebarGradientBrush}"
+                CornerRadius="0,26,26,0">
+            <Grid Margin="18">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel>
+                    <Border Width="70"
+                            Height="70"
+                            CornerRadius="35"
+                            Background="#38FFFFFF"
+                            Margin="0,6,0,14">
+                        <TextBlock Text="🍺"
+                                   FontSize="32"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+
+                    <TextBlock Text="Brewery App"
+                               Foreground="{StaticResource AmberLightBrush}"
+                               FontSize="24"
+                               FontWeight="Bold"/>
+
+                    <TextBlock Name="UserInfoText"
+                               Foreground="{StaticResource TextSecondaryBrush}"
+                               FontSize="15"
+                               FontWeight="SemiBold"
+                               TextWrapping="Wrap"
+                               Margin="0,12,0,22"/>
+                </StackPanel>
+
+                <ScrollViewer Grid.Row="1"
+                              VerticalScrollBarVisibility="Auto"
+                              Background="Transparent">
+                    <StackPanel>
+                        <Button Name="AdminButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Администрирование"
+                                Click="AdminButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Управление учетными записями и ролями."/>
+
+                        <Button Name="DirectorButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Панель директора"
+                                Click="DirectorButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Сводные данные и управленческие отчеты."/>
+
+                        <Button Name="AgronomistButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Агрономия"
+                                Click="AgronomistButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Посевы, участки, процессы выращивания и урожай."/>
+
+                        <Button Name="OrdersButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Заказы"
+                                Click="OrdersButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Список заказов и операции с ними."/>
+
+                        <Button Name="StockButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Склад"
+                                Click="StockButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Остатки готовой продукции на складе."/>
+
+                        <Button Name="MyTasksButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Мои задачи"
+                                Click="MyTasksButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Личные задачи текущего пользователя."/>
+
+                        <Button Name="ManagerTasksButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Постановка задач"
+                                Click="ManagerTasksButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Создание задач подчиненным и контроль исполнения."/>
+
+                        <Button Name="ReportsButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Отчеты"
+                                Click="ReportsButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Быстрые аналитические отчеты по данным системы."/>
+
+                        <Button Name="BrewerButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Панель пивовара"
+                                Click="BrewerButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Работа с назначенными варками."/>
+
+                        <Button Name="LabButton"
+                                Style="{StaticResource NavButtonStyle}"
+                                Content="Панель лаборанта"
+                                Click="LabButton_Click"
+                                Visibility="Collapsed"
+                                ToolTip="Контроль качества и статусы проверок."/>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <Button Grid.Row="2"
+                        Content="Выход"
+                        Style="{StaticResource SidebarLogoutButtonStyle}"
+                        Click="Logout_Click"
+                        Margin="0,16,0,0"
+                        ToolTip="Завершить текущий сеанс и вернуться к окну входа."/>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1" Margin="24">
+            <Border Style="{StaticResource CardStyle}"
+                    Padding="12">
+                <Frame Name="MainFrame"
+                       NavigationUIVisibility="Hidden"
+                       Background="Transparent"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="BreweryApp.Views.AddOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Новый заказ"
+        Height="500"
+        Width="500"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Клиент"/>
+            <ComboBox Name="ClientBox"
+                      DisplayMemberPath="Название"
+                      SelectedValuePath="КодКлиента"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Статус"/>
+            <TextBox Name="StatusBox" Text="Новый"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Content="Добавить позицию" Click="AddItem_Click"/>
+            <Button Content="Удалить выбранную позицию" Click="RemoveItem_Click"/>
+        </StackPanel>
+
+        <ListBox Name="ItemsList" Grid.Row="3" Margin="0,10,0,10"/>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Сохранить заказ" Click="Save_Click"/>
+            <Button Content="Отмена" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

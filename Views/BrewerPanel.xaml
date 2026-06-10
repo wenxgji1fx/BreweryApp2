@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="BreweryApp.Views.BrewerPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="Auto"
+             Height="Auto">
+    <Grid Margin="18"
+          Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="Панель пивовара"
+                       Style="{StaticResource PageTitleTextStyle}"/>
+
+            <TextBlock Text="Список назначенных варок и быстрые действия для запуска, завершения и сброса статуса."
+                       Style="{StaticResource PageSubtitleTextStyle}"/>
+        </StackPanel>
+
+        <Border Grid.Row="1"
+                Style="{StaticResource CardStyle}">
+            <DataGrid Name="BrewDataGrid"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      SelectionMode="Single"
+                      SelectionUnit="FullRow"
+                      IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Код варки"
+                                        Binding="{Binding КодВарки}"
+                                        Width="110"/>
+
+                    <DataGridTextColumn Header="Дата варки"
+                                        Binding="{Binding ДатаВарки}"
+                                        Width="140"/>
+
+                    <DataGridTextColumn Header="Объем"
+                                        Binding="{Binding Объем}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Статус"
+                                        Binding="{Binding Статус}"
+                                        Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <Border Grid.Row="2"
+                Style="{StaticResource SoftPanelStyle}">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center">
+                <Button Name="StartBrewButton"
+                        Content="Начать варку"
+                        Click="StartBrew_Click"
+                        ToolTip="Перевести выбранную варку в активное состояние."/>
+
+                <Button Name="FinishBrewButton"
+                        Content="Закончить варку"
+                        Click="FinishBrew_Click"
+                        IsEnabled="False"
+                        Style="{StaticResource SecondaryButtonStyle}"
+                        ToolTip="Завершить выбранную варку и обновить её статус."/>
+
+                <Button Name="ResetBrewButton"
+                        Content="Не начата"
+                        Click="ResetBrew_Click"
+                        Style="{StaticResource OutlineButtonStyle}"
+                        ToolTip="Вернуть статус варки в исходное состояние."/>
+
+                <Border Margin="16,0,0,0"
+                        Background="#7A4B2B"
+                        BorderBrush="#B07A38"
+                        BorderThickness="1"
+                        CornerRadius="12"
+                        Padding="14,10">
+                    <TextBlock Name="StatusText"
+                               Foreground="{StaticResource TextPrimaryBrush}"
+                               FontWeight="Bold"
+                               FontSize="14"
+                               VerticalAlignment="Center"/>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

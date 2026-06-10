@@ -1,0 +1,76 @@
+﻿<Page x:Class="BreweryApp.Views.ManagerTasksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="ManagerTasksPage">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Постановка задач"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
+
+        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                    <TextBlock Text="Исполнитель"/>
+                    <ComboBox Name="EmployeeBox"
+                              DisplayMemberPath="Display"
+                              SelectedValuePath="КодСотрудника"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,0,10,0">
+                    <TextBlock Text="Заголовок"/>
+                    <TextBox Name="TitleBox"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="0,0,10,0">
+                    <TextBlock Text="Тип задачи"/>
+                    <TextBox Name="TaskTypeBox"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Margin="0,0,10,0">
+                    <TextBlock Text="Дедлайн"/>
+                    <DatePicker Name="DeadlinePicker"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="4" VerticalAlignment="Bottom">
+                    <Button Content="Создать задачу" Click="CreateTask_Click"/>
+                    <Button Content="Обновить" Click="Refresh_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <TextBox Name="DescriptionBox"
+                 Grid.Row="2"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Auto"
+                 Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="3"
+                   Text="Задачи, поставленные мной"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
+
+        <DataGrid Name="TasksGrid"
+                  Grid.Row="4"
+                  AutoGenerateColumns="True"
+                  IsReadOnly="True"/>
+    </Grid>
+</Page>

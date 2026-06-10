@@ -1,0 +1,28 @@
+﻿<Page x:Class="BreweryApp.Views.MyTasksPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Мои задачи"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
+
+        <DataGrid Name="TasksGrid"
+                  Grid.Row="1"
+                  AutoGenerateColumns="True"
+                  IsReadOnly="True"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,0">
+            <TextBox Name="CommentBox" Width="300" Margin="5"/>
+            <Button Content="Выполнено" Click="Done_Click"/>
+            <Button Content="Не выполнено" Click="Failed_Click"/>
+            <Button Content="Обновить" Click="Refresh_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
